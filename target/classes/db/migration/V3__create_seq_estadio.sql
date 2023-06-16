@@ -1,0 +1,1 @@
+CREATE SEQUENCE tb_estadio_seq;

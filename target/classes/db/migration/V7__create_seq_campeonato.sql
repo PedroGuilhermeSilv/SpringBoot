@@ -1,0 +1,1 @@
+CREATE SEQUENCE tb_campeonato_seq;
