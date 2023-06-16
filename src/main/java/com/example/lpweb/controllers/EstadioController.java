@@ -1,6 +1,7 @@
 package com.example.lpweb.controllers;
 
 import com.example.lpweb.dtos.EstadioRecordDto;
+import com.example.lpweb.models.CampeonatoModel;
 import com.example.lpweb.models.EstadioModel;
 import com.example.lpweb.models.JogadorModel;
 import com.example.lpweb.repositories.EstadioRepository;
@@ -10,12 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EstadioController {
@@ -34,5 +33,13 @@ public class EstadioController {
     public ResponseEntity<List<EstadioModel>> getAllEstadios(){
         List<EstadioModel> estadios = estadioRepository.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(estadios);
+    }
+    @GetMapping("/estadios/{id}")
+    public ResponseEntity<Object> getOneEstadio(@PathVariable(value = "id") Integer id){
+        Optional<EstadioModel> estadio0 = estadioRepository.findById(id);
+        if(estadio0.isEmpty()){
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Estadio não encontrado");
+        }
+        return  ResponseEntity.status(HttpStatus.OK).body(estadio0.get());
     }
 }
