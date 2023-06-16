@@ -1,5 +1,5 @@
 # Desenvolvimento de uma API REST para um fragmento de um sistema de Gerenciamento de Campeonato de Futebol
-> Usando o flywaydb você pode apenas mudar os parametros de driver de banco de dados e conexões no arquivo application.properties (caminho:src/main/resources/application.properties) que o projeto irá criar as tabelas: tb_campeonato, tb_campeonato_time, tb_estadio, tb_jogador, tb_partida, tb_resultado e tb_time. O banco irá inicializar com dados iniciais em todas as tabelas.
+Usando o flywaydb você pode apenas mudar os parametros de driver de banco de dados e conexões no arquivo application.properties (caminho:src/main/resources/application.properties) que o projeto irá criar as tabelas: tb_campeonato, tb_campeonato_time, tb_estadio, tb_jogador, tb_partida, tb_resultado e tb_time. O banco irá inicializar com dados iniciais em todas as tabelas.
 
 ## Métodos Http disponíveis na API
 
